@@ -123,7 +123,7 @@ for sec in "${indeps[@]}"; do
     arg=$(extract "parse_args(.args.${sec}[$idx])")
 
     # submission script provided?
-    submission_script=$(extract "parse_args(.args.${sec}[$idx]")
+    submission_script=$(jq -r ".submission.${sec}" $conf)
 
     # executing
     if [[ "$submission_script" != "" ]]; then
@@ -173,7 +173,7 @@ for iter in $(seq 1 $dep_iters); do
     arg=$(extract "parse_args(.args.${sec}[$sub_idx])")
     
     # submission script provided?
-    submission_script=$(extract "parse_args(.args.${sec}[$idx]")
+    submission_script=$(jq -r ".submission.${sec}" $conf)
 
     # executation part 
     # if parent process
@@ -181,9 +181,9 @@ for iter in $(seq 1 $dep_iters); do
       # argument value
       # save SLURM submission ID(s)
       if [[ "$submission_script" != "" ]]; then
-        ID+=$(sbatch ${submission_script} --parsable --wrap "${executable} ${arg} >> ${log} 2>&1)")
+        ID+="$(sbatch ${submission_script} --parsable --wrap "${executable} ${arg} >> ${log} 2>&1)")"
       else
-        ID+=$($executable $arg)
+        ID+="$($executable $arg)"
       fi
 
       # print parent message
@@ -198,9 +198,9 @@ for iter in $(seq 1 $dep_iters); do
  
       # submit child jobs dependant on the parent
       if [[ "$submission_script" != "" ]]; then
-        ID+=$(sbatch ${submission_script} --parsable --wrap "$executable $arg --dependency=$csvID >> $log 2>&1")
+        ID+="$(sbatch ${submission_script} --parsable --wrap "$executable $arg --dependency=$csvID >> $log 2>&1")"
       else
-        ID+=$($executable $arg --dependency=$csvID >> $log 2>&1)
+        ID+="$($executable $arg --dependency=$csvID >> $log 2>&1)"
       fi
 
       # print child message

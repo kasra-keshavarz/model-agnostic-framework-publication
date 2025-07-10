@@ -1,8 +1,8 @@
 {
   "exec": {
     "geofabric": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/1-geofabric/geospatial-fabric-modifier.py",
-    "met": "/home/kasra545/github-repos/datatool/extract-dataset.sh",
-    "gis": "/home/kasra545/github-repos/gistool/extract-gis.sh",
+    "met": "/home/kasra.keshavarz1/github-repos/datatool/extract-dataset.sh",
+    "gis": "/home/kasra.keshavarz1/github-repos/gistool/extract-gis.sh",
     "remap": "easymore cli",
     "meshflow": "meshflow"
   },
@@ -48,7 +48,7 @@
       "variable": "MCD12Q1.061",
       "start-date": "2001",
       "end-date": "2020",
-      "output-dir": ""/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/attributes/landcover/",
+      "output-dir": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/attributes/landcover/",
       "lat-lims": "",
       "lon-lims": "",
       "shape-file": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/shapefiles/headwater/shapes-distributed/CAN_01AK006/CAN_01AK006_distributed_basin.shp",
@@ -75,7 +75,7 @@
       "variable": "elv",
       "start-date": "2001",
       "end-date": "2020",
-      "output-dir": ""/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/attributes/elevation/",
+      "output-dir": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/attributes/elevation/",
       "lat-lims": "",
       "lon-lims": "",
       "shape-file": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/shapefiles/headwater/shapes-distributed/CAN_01AK006/CAN_01AK006_distributed_basin.shp",
@@ -102,7 +102,7 @@
       "variable": "soil_classes",
       "start-date": "",
       "end-date": "",
-      "output-dir": ""/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/attributes/soil/",
+      "output-dir": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/attributes/soil/",
       "lat-lims": "",
       "lon-lims": "",
       "shape-file": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/shapefiles/headwater/shapes-distributed/CAN_01AK006/CAN_01AK006_distributed_basin.shp",
@@ -143,7 +143,7 @@
       "remapped-var-id": "COMID",
       "remapped-dim-id": "COMID",
       "output-dir": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/forcings/easymore-outputs/",
-      "job-conf": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/2-model-agnostic/easymore-job.slurm",
+      "job-conf": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/2-model-agnostic/easymore.slurm",
       "_flags": [
         "submit-job"
       ]
@@ -154,9 +154,9 @@
     }]
   },
   "order": {
-    "geofabric": 1,
+    "geofabric": 0,
     "met": 2,
-    "gis": -1,
+    "gis": 1,
     "remap": 3,
     "meshflow": 4
   },
@@ -164,7 +164,7 @@
     "geofabric": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/1-geofabric/geofabric.slurm",
     "met": "",
     "gis": "",
-    "remap": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/2-model-agnostic/easymore-job.slurm",
+    "remap": "",
     "meshflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/mesh.slurm"
   }
 }

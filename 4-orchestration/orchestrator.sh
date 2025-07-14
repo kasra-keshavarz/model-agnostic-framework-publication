@@ -1,5 +1,7 @@
 #!/bin/bash    
+
 # Copyright (C) 2023-2025 University of Calgary
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -16,8 +18,12 @@
 # input variables
 conf="$1"
 
+# logging date string
+dateLog="$(date +'%Y%m%d_%H%M%S')"
+
 # global variables
-log="$(dirname $0)/orchestrator.log"
+log="$(dirname $0)/orchestrator_${dateLog}.log"
+log="$(realpath $(dirname $0)/orchestrator_${dateLog}.log)"
 
 # Main message
 echo "$(basename $0): Model-agnostic workflow job submission to SLURM scheduler"
@@ -30,9 +36,14 @@ fi
 # create log file
 touch "$log"
 
+# cache file
+cache="${HOME}/.orchestrator/orchestration_${dateLog}"
+mkdir -p "${cache}"
+
 # the header is the date the script is run
 date >> $log
-echo "$(basename $0): details are logged in $log"
+echo "$(basename $0): details are logged in ${log}"
+echo "$(basename $0): cache files are in ${cache}"
 
 
 #####################################
@@ -167,11 +178,11 @@ for iter in $(seq 1 $dep_iters); do
 
   for sub_iter in $(seq 1 $sub_iters); do
     # jq array index starts from 0
-    sub_idx=$(( $sub_iter - 1 ))
+    sub_idx="$(( $sub_iter - 1 ))"
 
     # argument
-    arg=$(extract "parse_args(.args.${sec}[$sub_idx])")
-    
+    arg=$(extract "[parse_args(.args.${sec}[$sub_idx])] | join(\"\")" | tr -d '\n')
+
     # submission script provided?
     submission_script=$(jq -r ".submission.${sec}" $conf)
 
@@ -181,32 +192,66 @@ for iter in $(seq 1 $dep_iters); do
       # argument value
       # save SLURM submission ID(s)
       if [[ "$submission_script" != "" ]]; then
-        ID+="$(sbatch ${submission_script} --parsable --wrap "${executable} ${arg} >> ${log} 2>&1)")"
+        # Prepare the line that needs to be added to the SLURM submission
+        # script
+        parse_line="#SBATCH --parsable"
+        eval_line="srun ${executable} ${arg} >> ${log} 2>&1"
+
+        # Make a temporary file in the cache
+        submission_script_name="$(basename ${submission_script})"
+        cp "${submission_script}" "${cache}/${submission_script_name}"
+
+        # add the prepared line to the end of the file
+        sed -i "2i\\${parse_line}" "${cache}/${submission_script_name}"
+        echo "${eval_line}" >> "${cache}/${submission_script_name}"
+
+        # execute the script
+        ID+=("$(sbatch ${cache}/${submission_script_name})")
+
       else
-        ID+="$($executable $arg)"
+        ID+=("$(${executable} --parsable ${arg})")
+
       fi
 
       # print parent message
       echo "$(basename $0): Script for :${sec}:#${sub_iter} process" \
-        "is executed for the parent process"
+        "is executed as a parent process with ID ${ID[-1]}"
 
-    # if child process
+    # if a child process
     else
  
       # make comma delimited values of SLURM batch IDs
-      csvID=$(array_to_csv ${ID[@]})
+      csvID="$(array_to_csv ${ID[-1]})"
  
       # submit child jobs dependant on the parent
       if [[ "$submission_script" != "" ]]; then
-        ID+="$(sbatch ${submission_script} --parsable --wrap "$executable $arg --dependency=$csvID >> $log 2>&1")"
+        # Prepare the line that needs to be added to the SLURM submission
+        # script
+        dependency_line="#SBATCH --dependency=afterok:${csvID}"
+        parsable_line="#SBATCH --parsable"
+        eval_line="srun ${executable} ${arg} >> ${log} 2>&1"
+
+        # Make a temporary file in the cache
+        submission_script_name="$(basename ${submission_script})"
+        cp "${submission_script}" "${cache}/${submission_script_name}"
+
+        # add the prepared line to the end of the file
+        sed -i "2i\\${dependency_line}" "${cache}/${submission_script_name}"
+        sed -i "3i\\${parsable_line}" "${cache}/${submission_script_name}"
+        echo "$eval_line" >> "${cache}/${submission_script_name}"
+
+        # execute the script
+        ID+="$(sbatch ${cache}/${submission_script_name})"
+
       else
-        ID+="$($executable $arg --dependency=$csvID >> $log 2>&1)"
+        # execute the script as is, the script must accept --dependency
+        ID+="$(${executable} ${arg} --parsable --dependency="${csvID}" >> $log 2>&1)"
       fi
 
       # print child message
       echo "$(basename $0): Script for :${sec}: for the #${sub_iter}" \
-        "process is executed for the child process with parent ID(s) of" \
-        "${ID[@]}"
+        "process is executed as a child process for parent process ID(s) of" \
+        "${csvID}"
     fi
 
   done

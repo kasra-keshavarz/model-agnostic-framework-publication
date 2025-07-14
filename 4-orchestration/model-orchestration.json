@@ -66,7 +66,8 @@
       "cluster": "/home/kasra.keshavarz1/github-repos/gistool/etc/clusters/ucalgary-arc.json",
       "_flags": [
         "include-na",
-        "submit-job"
+        "submit-job",
+        "parsable"
       ]
     },
     {
@@ -93,7 +94,8 @@
       "cluster": "/home/kasra.keshavarz1/github-repos/gistool/etc/clusters/ucalgary-arc.json",
       "_flags": [
         "include-na",
-        "submit-job"
+        "submit-job",
+        "parsable"
       ]
     },
     {
@@ -120,7 +122,8 @@
       "cluster": "/home/kasra.keshavarz1/github-repos/gistool/etc/clusters/ucalgary-arc.json",
       "_flags": [
         "include-na",
-        "submit-job"
+        "submit-job",
+        "parsable"
       ]
     }],
     "remap": [{
@@ -154,11 +157,11 @@
     }]
   },
   "order": {
-    "geofabric": 0,
-    "met": 2,
-    "gis": 1,
-    "remap": 3,
-    "meshflow": 4
+    "geofabric": 1,
+    "met": 3,
+    "gis": 2,
+    "remap": 4,
+    "meshflow": 5
   },
   "submission": {
     "geofabric": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/1-geofabric/geofabric.slurm",

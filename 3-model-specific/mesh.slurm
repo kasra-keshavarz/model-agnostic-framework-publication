@@ -3,6 +3,4 @@
 #SBATCH --nodes=1
 #SBATCH --time=16:00:00
 #SBATCH --mem=16000M
-#SBATCH --job-name=MESH_%CATCHMENT%
-#SBATCH --mail-user=kasra.keshavarz1@ucalgary.ca
-#SBATCH --mail-type=FAIL,BEGIN,END
+#SBATCH --job-name=MESH

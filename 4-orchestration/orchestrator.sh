@@ -56,15 +56,6 @@ extract () {
   jq -r "$(cat $jqScript) $func" $conf;
 }
 
-array_to_csv() {
-  # ChatGPT prompt: Give me a bash function to convert a bash array to
-  # comma-delimited strings
-  local array=("$@")     # Get all arguments as an array
-  local IFS=','          # Set the Internal Field Separator to a comma
-  local result="${array[*]}"
-  echo "$result"
-}
-
 # The `model-agnostic.json` file consists of four main sections
 #   1. exec: where the executable paths are defined,
 #   2. args: where the arguments to the executables are iterated.
@@ -140,7 +131,7 @@ for sec in "${indeps[@]}"; do
     if [[ "$submission_script" != "" ]]; then
       sbatch ${submission_script} --wrap "${executable} ${arg} >> ${log} 2>&1)"
     else
-      $executable $arg >> $log 2>&1;
+      $executable $arg 2>> $log;
     fi
 
     # relevant message
@@ -195,7 +186,7 @@ for iter in $(seq 1 $dep_iters); do
         # Prepare the line that needs to be added to the SLURM submission
         # script
         parse_line="#SBATCH --parsable"
-        eval_line="srun ${executable} ${arg} >> ${log} 2>&1"
+        eval_line="srun ${executable} ${arg} 2>> ${log}"
 
         # Make a temporary file in the cache
         submission_script_name="$(basename ${submission_script})"
@@ -221,15 +212,16 @@ for iter in $(seq 1 $dep_iters); do
     else
  
       # make comma delimited values of SLURM batch IDs
-      csvID="$(array_to_csv ${ID[-1]})"
- 
+      printf -v joined '%s,' "${ID[@]}"
+      csvID="$(echo "${joined%,}")"
+
       # submit child jobs dependant on the parent
       if [[ "$submission_script" != "" ]]; then
         # Prepare the line that needs to be added to the SLURM submission
         # script
         dependency_line="#SBATCH --dependency=afterok:${csvID}"
         parsable_line="#SBATCH --parsable"
-        eval_line="srun ${executable} ${arg} >> ${log} 2>&1"
+        eval_line="srun ${executable} ${arg} 2>> ${log}"
 
         # Make a temporary file in the cache
         submission_script_name="$(basename ${submission_script})"
@@ -241,11 +233,11 @@ for iter in $(seq 1 $dep_iters); do
         echo "$eval_line" >> "${cache}/${submission_script_name}"
 
         # execute the script
-        ID+="$(sbatch ${cache}/${submission_script_name})"
+        ID+=("$(sbatch ${cache}/${submission_script_name})")
 
       else
         # execute the script as is, the script must accept --dependency
-        ID+="$(${executable} ${arg} --parsable --dependency="${csvID}" >> $log 2>&1)"
+        ID+=("$(${executable} ${arg} --parsable --dependency="${csvID}" 2>> $log)")
       fi
 
       # print child message

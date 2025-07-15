@@ -1,7 +1,7 @@
 {
     "riv": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/shapefiles/headwater/shapes-distributed/CAN_01AK006/CAN_01AK006_distributed_river.shp",
     "cat": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/shapefiles/headwater/shapes-distributed/CAN_01AK006/CAN_01AK006_distributed_basin.shp",
-    "landcover": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/attributes/landcover/MCD12Q1.061/CAN_01AK006_stats_MCD12Q1.061_2020.csv",
+    "landcover": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/attributes/CAN_01AK006/landcover/MCD12Q1.061/CAN_01AK006_stats_MCD12Q1.061_2020.csv",
     "forcing_files": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/forcings/easymore-outputs/",
     "forcing_vars": {
         "air_pressure": "CaSR_v3.1_P_P0_SFC",

@@ -41,7 +41,7 @@ def main():
 
     # Output path for the processed files
     output_root_path = args.output_root_path
-    output_path = os.path.join(output_root_path, fabric_code)
+    output_path = os.path.join(output_root_path)
 
     # Reading files
     riv = gpd.read_file(os.path.join(repo_path, fabric_code, f'{fabric_code}_distributed_river.shp'))
@@ -57,6 +57,7 @@ def main():
     # assign other values to zero
     for col in riv_cols:
         riv.loc[0, col] = 0
+        riv[col] = riv[col].astype('Int64')
 
     # assign `order` to 1
     riv.loc[0, 'order'] = 1

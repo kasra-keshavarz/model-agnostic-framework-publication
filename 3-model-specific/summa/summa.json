@@ -71,7 +71,6 @@
         "vegeParTbl": "MODIFIED_IGBP_MODIS_NOAH"
     },
     "settings": {
-        "model_path": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/models/SUMMA/",
         "start_date": "1980-01-01 00:00",
         "end_date": "1980-01-10 23:00",
         "verbose": "True"

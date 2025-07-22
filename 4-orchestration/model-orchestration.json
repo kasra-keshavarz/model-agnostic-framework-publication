@@ -4,7 +4,10 @@
     "met": "/home/kasra.keshavarz1/github-repos/datatool/extract-dataset.sh",
     "gis": "/home/kasra.keshavarz1/github-repos/gistool/extract-gis.sh",
     "remap": "easymore cli",
-    "meshflow": "meshflow"
+    "meshflow": "meshflow",
+    "summaflow": "summaflow",
+    "fuseflow": "fuseflow",
+    "marrmotflow": "marrmotflow"
   },
 
   "args": {
@@ -116,7 +119,7 @@
       ],
       "quantile": "",
       "prefix": "CAN_01AK006_",
-      "email": "a",
+      "email": "",
       "fid": "COMID",
       "cache": "$TMPDIR",
       "cluster": "/home/kasra.keshavarz1/github-repos/gistool/etc/clusters/ucalgary-arc.json",
@@ -152,6 +155,18 @@
     "meshflow": [{
       "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/mesh/mesh.json",
       "output-path": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/models/mesh/"
+    }],
+    "summaflow": [{
+      "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/summa/summa.json",
+      "output-path": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/models/summa/"
+    }],
+    "fuseflow": [{
+      "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/fuse/fuse.json",
+      "output-path": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/models/fuse/"
+    }],
+    "marrmotflow": [{
+      "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/marrmot/marrmot.json",
+      "output-path": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/models/marrmot/"
     }]
   },
   "order": {
@@ -159,13 +174,19 @@
     "met": 3,
     "gis": 2,
     "remap": 4,
-    "meshflow": 5
+    "meshflow": 5,
+    "summaflow": 6,
+    "fuseflow": 7,
+    "marrmotflow": 8
   },
   "submission": {
     "geofabric": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/1-geofabric/geofabric.slurm",
     "met": "",
     "gis": "",
     "remap": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/2-model-agnostic/easymore.slurm",
-    "meshflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/mesh/mesh.slurm"
+    "meshflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/mesh/mesh.slurm",
+    "summaflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/summa/summa.slurm",
+    "fuseflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/fuse/fuse.slurm",
+    "marrmotflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/marrmot/marrmot.slurm"
   }
 }

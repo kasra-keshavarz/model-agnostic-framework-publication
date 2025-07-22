@@ -1,5 +1,5 @@
 {
-    "forcing_data": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/forcings/easymore-outputs",
+    "forcing_data": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CATCHMENT/forcings/easymore-outputs",
     "forcing_name_mapping": {
         "CaSR_v3.1_A_PR0_SFC": "pptrate",
         "CaSR_v3.1_P_TT_09975": "airtemp",
@@ -27,9 +27,9 @@
         "global": {}
     },
     "topology_data": {
-        "riv": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/shapefiles/CAN_01AK006_distributed_river.shp",
-        "hru": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/shapefiles/CAN_01AK006_distributed_basin.shp",
-        "cat": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/shapefiles/CAN_01AK006_distributed_basin.shp"
+        "riv": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CATCHMENT/shapefiles/CATCHMENT_distributed_river.shp",
+        "hru": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CATCHMENT/shapefiles/CATCHMENT_distributed_basin.shp",
+        "cat": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CATCHMENT/shapefiles/CATCHMENT_distributed_basin.shp"
     },
     "topology_unit_mapping": {},
     "topology_to_unit_mapping": {},
@@ -40,9 +40,9 @@
         "global": {}
     },
     "geospatial_data": {
-        "elevation": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/attributes/elevation/CAN_01AK006_stats_elv.csv",
-        "soilTypeIndex": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/attributes/soil/CAN_01AK006_stats_soil_classes.csv",
-        "vegTypeIndex": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/attributes/landcover/MCD12Q1.061/CAN_01AK006_stats_MCD12Q1.061_2020.csv"
+        "elevation": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CATCHMENT/attributes/elevation/CATCHMENT_stats_elv.csv",
+        "soilTypeIndex": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CATCHMENT/attributes/soil/CATCHMENT_stats_soil_classes.csv",
+        "vegTypeIndex": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CATCHMENT/attributes/landcover/MCD12Q1.061/CATCHMENT_stats_MCD12Q1.061_2020.csv"
     },
     "cold_state": {
         "layers": {

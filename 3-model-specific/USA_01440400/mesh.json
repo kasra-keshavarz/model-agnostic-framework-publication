@@ -1,0 +1,101 @@
+{
+    "riv": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_01440400/shapefiles/USA_01440400_distributed_river.shp",
+    "cat": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_01440400/shapefiles/USA_01440400_distributed_basin.shp",
+    "landcover": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_01440400/attributes/landcover/MCD12Q1.061/USA_01440400_stats_MCD12Q1.061_2020.csv",
+    "forcing_files": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_01440400/forcings/easymore-outputs",
+    "forcing_vars": {
+        "air_pressure": "CaSR_v3.1_P_P0_SFC",
+        "specific_humidity": "CaSR_v3.1_P_HU_09975",
+        "air_temperature": "CaSR_v3.1_P_TT_09975",
+        "wind_speed": "CaSR_v3.1_P_UVC_09975",
+        "precipitation": "CaSR_v3.1_A_PR0_SFC",
+        "shortwave_radiation": "CaSR_v3.1_P_FB_SFC",
+        "longwave_radiation": "CaSR_v3.1_P_FI_SFC"
+    },
+    "forcing_units": {
+        "air_pressure": "millibar",
+        "specific_humidity": "kilogram / kilogram",
+        "air_temperature": "celsius",
+        "wind_speed": "knot",
+        "precipitation": "meter / hour",
+        "shortwave_radiation": "watt / meter ** 2",
+        "longwave_radiation": "watt / meter ** 2"
+    },
+    "main_id": "COMID",
+    "ds_main_id": "NextDownID",
+    "landcover_classes": {
+        "1": "Evergreen Needleleaf Forests",
+        "2": "Evergreen Broadleaf Forests",
+        "3": "Deciduous Needleleaf Forests",
+        "4": "Deciduous Broadleaf Forests",
+        "5": "Mixed Forests",
+        "6": "Closed Shrublands",
+        "7": "Open Shrublands",
+        "8": "Woody Savannas",
+        "9": "Savannas",
+        "10": "Grasslands",
+        "11": "Permanent Wetlands",
+        "12": "Croplands",
+        "13": "Urban and Built-up Lands",
+        "14": "Cropland/Natural Vegetation Mosaics",
+        "15": "Permanent Snow and Ice",
+        "16": "Barren",
+        "17": "Water Bodies",
+        "255": "Unclassified"
+    },
+    "ddb_vars": {
+        "river_slope": "slope",
+        "river_length": "new_len_km",
+        "river_class": "order"
+    },
+    "ddb_units": {
+        "river_slope": "dimensionless",
+        "river_length": "kilometer",
+        "river_class": "dimensionless"
+    },
+    "settings": {
+        "core": {
+            "forcing_files": "single",
+            "forcing_start_date": "1980-01-01 00:00:00",
+            "simulation_start_date": "1980-01-01 00:00:00",
+            "simulation_end_date": "1980-01-05 23:00:00",
+            "forcing_time_zone": "UTC",
+            "output_path": "results"
+        },
+        "class_params": {
+            "measurement_heights": {
+                "wind_speed": 20,
+                "specific_humidity": 20,
+                "air_temperature": 20,
+                "roughness_length": 50
+            },
+            "copyright": {
+                "author": "University of Calgary",
+                "location": "University of Calgary"
+            },
+            "grus": {
+                "1": "needleleaf",
+                "2": "broadleaf",
+                "3": "needleaf",
+                "4": "broadleaf",
+                "5": "broadleaf",
+                "6": "grass",
+                "7": "grass",
+                "8": "grass",
+                "9": "grass",
+                "10": "grass",
+                "11": "water",
+                "12": "crops",
+                "13": "urban",
+                "14": "crops",
+                "15": "barrenland",
+                "16": "barrenland",
+                "17": "water",
+                "255": "barrenland"
+            }
+        },
+        "hydrology_params": {},
+        "run_options": {}
+    },
+    "outlet_value": 0
+}

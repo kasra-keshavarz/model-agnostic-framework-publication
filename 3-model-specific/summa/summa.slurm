@@ -3,4 +3,4 @@
 #SBATCH --nodes=1
 #SBATCH --time=16:00:00
 #SBATCH --mem=16000M
-#SBATCH --job-name=SUMMA
+#SBATCH --job-name=SUMMA-CATCHMENT

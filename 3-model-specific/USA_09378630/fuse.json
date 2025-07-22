@@ -1,0 +1,20 @@
+{
+    "name": "USA_09378630",
+    "cat": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_09378630/shapefiles/USA_09378630_distributed_basin.shp",
+    "forcing_files": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_09378630/forcings/easymore-outputs",
+    "forcing_vars": {
+        "temperature": "CaSR_v3.1_P_TT_09975",
+        "precipitation": "CaSR_v3.1_A_PR0_SFC"
+    },
+    "forcing_units": {
+        "temperature": "celsius",
+        "precipitation": "meter / hour"
+    },
+    "forcing_time_zone": "UTC",
+    "settings": {
+        "start_date": "1979-12-31",
+        "end_date": "1980-02-20",
+        "start_evaluation": "1980-02-10",
+        "end_evaluation": "1980-02-20"
+    }
+}

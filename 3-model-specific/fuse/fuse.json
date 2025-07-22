@@ -1,7 +1,7 @@
 {
-    "name": "CAN_01AK006",
-    "cat": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/shapefiles/CAN_01AK006_distributed_basin.shp",
-    "forcing_files": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01AK006/forcings/easymore-outputs",
+    "name": "CATCHMENT",
+    "cat": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CATCHMENT/shapefiles/CATCHMENT_distributed_basin.shp",
+    "forcing_files": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CATCHMENT/forcings/easymore-outputs",
     "forcing_vars": {
         "temperature": "CaSR_v3.1_P_TT_09975",
         "precipitation": "CaSR_v3.1_A_PR0_SFC"

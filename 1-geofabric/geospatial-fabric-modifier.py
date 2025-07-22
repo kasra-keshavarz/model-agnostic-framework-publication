@@ -53,6 +53,7 @@ def main():
     # assign the corresponding COMID value
     if not riv.loc[0, 'COMID']:
         riv.loc[0, 'COMID'] = cat.loc[0, 'COMID']
+        riv['COMID'] = cat['COMID'].astype('Int64')
 
     # assign other values to zero
     for col in riv_cols:
@@ -61,6 +62,7 @@ def main():
 
     # assign `order` to 1
     riv.loc[0, 'order'] = 1
+    riv['order'] = riv['order'].astype('Int64')
 
     # assign the geometry to a point
     if riv.loc[0, 'geometry'] is None:

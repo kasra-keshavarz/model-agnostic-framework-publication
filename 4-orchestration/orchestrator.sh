@@ -44,6 +44,7 @@ mkdir -p "${cache}"
 date >> $log
 echo "$(basename $0): details are logged in ${log}"
 echo "$(basename $0): cache files are in ${cache}"
+echo "$(basename $0): job logs are in ${cache}"
 
 
 #####################################

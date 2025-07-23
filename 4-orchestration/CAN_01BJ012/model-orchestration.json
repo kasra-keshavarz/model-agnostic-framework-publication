@@ -155,19 +155,19 @@
       "_flags": []
     }],
     "meshflow": [{
-      "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/mesh/CAN_01BJ012/mesh.json",
+      "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BJ012/mesh.json",
       "output-path": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01BJ012/models/mesh/"
     }],
     "summaflow": [{
-      "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/summa/CAN_01BJ012/summa.json",
+      "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BJ012/summa.json",
       "output-path": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01BJ012/models/summa/"
     }],
     "fuseflow": [{
-      "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/fuse/CAN_01BJ012/fuse.json",
+      "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BJ012/fuse.json",
       "output-path": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01BJ012/models/fuse/"
     }],
     "marrmotflow": [{
-      "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/marrmot/CAN_01BJ012/marrmot.json",
+      "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BJ012/marrmot.json",
       "output-path": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01BJ012/models/marrmot/"
     }],
     "tar": [{
@@ -206,10 +206,10 @@
     "met": "",
     "gis": "",
     "remap": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/2-model-agnostic/easymore.slurm",
-    "meshflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/mesh/mesh.slurm",
-    "summaflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/summa/summa.slurm",
-    "fuseflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/fuse/fuse.slurm",
-    "marrmotflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/marrmot/marrmot.slurm",
+    "meshflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BJ012/mesh.slurm",
+    "summaflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BJ012/summa.slurm",
+    "fuseflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BJ012/fuse.slurm",
+    "marrmotflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BJ012/marrmot.slurm",
     "tar": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/etc/tar.slurm",
     "rm": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/etc/rm.slurm"
   }

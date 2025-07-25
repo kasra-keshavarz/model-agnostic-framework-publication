@@ -46,25 +46,25 @@ def main():
     # Reading files
     riv = gpd.read_file(os.path.join(repo_path, fabric_code, f'{fabric_code}_distributed_river.shp'))
     cat = gpd.read_file(os.path.join(repo_path, fabric_code, f'{fabric_code}_distributed_basin.shp'))
-
+    
     # columns for further manipulation
     riv_cols = set(riv.columns) - set(['COMID', 'geometry'])
     
     # assign the corresponding COMID value
     if not riv.loc[0, 'COMID']:
         riv.loc[0, 'COMID'] = cat.loc[0, 'COMID']
-        riv['COMID'] = cat['COMID'].astype('Int64')
+        riv['COMID'] = cat['COMID'].astype(int).astype('Int64')
     
     # assign other values to zero, if not provided
     for col in riv_cols:
         if riv.loc[0, col] is None:
             riv.loc[0, col] = 0 
-            riv[col] = riv[col].astype('Int64')
+            riv[col] = riv[col].astype(int).astype('Int64')
     
     # assign `order` to 1
     if riv.loc[0, 'order'] is None:
         riv.loc[0, 'order'] = 1 
-        riv['order'] = riv['order'].astype('Int64')
+        riv['order'] = riv['order'].astype(int).astype('Int64')
     
     # assign the geometry to a point
     if riv.loc[0, 'geometry'] is None:
@@ -72,6 +72,9 @@ def main():
     
     # NextDownID is always 0
     riv.loc[0, 'NextDownID'] = 0
+    
+    # make sure the COMID of `cat` is also an integer
+    cat['COMID'] = cat['COMID'].astype(int).astype('Int64')
 
     # saving both files
     # first creating directory based on the subbasin fabric code

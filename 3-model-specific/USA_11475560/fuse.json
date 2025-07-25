@@ -2,6 +2,7 @@
     "name": "USA_11475560",
     "cat": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_11475560/shapefiles/USA_11475560_distributed_basin.shp",
     "forcing_files": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_11475560/forcings/easymore-outputs",
+    "streamflow": "/work/comphyd_lab/data/_to-be-moved/camels-spat-upload/observations/headwater/obs-daily/USA_11475560_daily_flow_observations.nc",
     "forcing_vars": {
         "temperature": "CaSR_v3.1_P_TT_09975",
         "precipitation": "CaSR_v3.1_A_PR0_SFC"
@@ -13,8 +14,8 @@
     "forcing_time_zone": "UTC",
     "settings": {
         "start_date": "1979-12-31",
-        "end_date": "1980-02-20",
-        "start_evaluation": "1980-02-10",
-        "end_evaluation": "1980-02-20"
+        "end_date": "1984-12-31",
+        "start_evaluation": "1984-01-01",
+        "end_evaluation": "1984-12-31"
     }
 }

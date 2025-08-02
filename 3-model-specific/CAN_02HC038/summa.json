@@ -1,0 +1,85 @@
+{
+    "forcing_data": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_02HC038/forcings/easymore-outputs",
+    "forcing_name_mapping": {
+        "CaSR_v3.1_A_PR0_SFC": "pptrate",
+        "CaSR_v3.1_P_TT_09975": "airtemp",
+        "CaSR_v3.1_P_P0_SFC": "airpres",
+        "CaSR_v3.1_P_FI_SFC": "LWRadAtm",
+        "CaSR_v3.1_P_FB_SFC": "SWRadAtm",
+        "CaSR_v3.1_P_HU_09975": "spechum",
+        "CaSR_v3.1_P_UVC_09975": "windspd"
+    },
+    "forcing_unit_mapping": {
+        "pptrate": "meter / hour",
+        "airtemp": "degC",
+        "airpres": "millibar",
+        "LWRadAtm": "watt / meter ** 2",
+        "SWRadAtm": "watt / meter ** 2",
+        "spechum": "dimensionless",
+        "windspd": "knot"
+    },
+    "forcing_attrs": {
+        "measurement_height": 20,
+        "measurement_height_unit": "meter",
+        "forcing_time_zone": "utc",
+        "target_time_zone": "utc",
+        "local": {},
+        "global": {}
+    },
+    "topology_data": {
+        "riv": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_02HC038/shapefiles/CAN_02HC038_distributed_river.shp",
+        "hru": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_02HC038/shapefiles/CAN_02HC038_distributed_basin.shp",
+        "cat": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_02HC038/shapefiles/CAN_02HC038_distributed_basin.shp"
+    },
+    "topology_unit_mapping": {},
+    "topology_to_unit_mapping": {},
+    "topology_attrs": {
+        "gru_fid": "COMID",
+        "hru_fid": "COMID",
+        "local": {},
+        "global": {}
+    },
+    "geospatial_data": {
+        "elevation": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_02HC038/attributes/elevation/CAN_02HC038_stats_elv.csv",
+        "soilTypeIndex": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_02HC038/attributes/soil/CAN_02HC038_stats_soil_classes.csv",
+        "vegTypeIndex": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_02HC038/attributes/landcover/MCD12Q1.061/CAN_02HC038_stats_MCD12Q1.061_2020.csv"
+    },
+    "cold_state": {
+        "layers": {
+            "nSoil": 8,
+            "nSnow": 0
+        },
+        "states": {
+            "scalarCanopyIce": 0,
+            "scalarCanopyLiq": 0,
+            "scalarSnowDepth": 0,
+            "scalarSWE": 0,
+            "scalarSfcMeltPond": 0,
+            "scalarAquiferStorage": 0.4,
+            "scalarSnowAlbedo": 0,
+            "scalarCanairTemp": 283.16,
+            "scalarCanopyTemp": 283.16,
+            "mLayerTemp": 283.16,
+            "mLayerVolFracIce": 0,
+            "mLayerVolFracLiq": 0.4,
+            "mLayerMatricHead": -1.0,
+            "mLayerDepth": [0.025, 0.075, 0.15, 0.25, 0.5, 0.5, 1, 1.5]
+        }
+    },
+    "decisions": {
+        "soilCatTbl": "ROSETTA",
+        "vegeParTbl": "MODIFIED_IGBP_MODIS_NOAH"
+    },
+    "settings": {
+        "start_date": "1980-01-01 00:00",
+        "end_date": "1980-01-10 23:00",
+        "verbose": "True"
+    },
+    "fillna": {
+        "geospatial_data": {
+            "elevation": 1,
+            "soilTypeIndex": 6,
+            "vegTypeIndex": 1
+        }
+    }
+}

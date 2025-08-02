@@ -1,0 +1,13 @@
+{
+    "cat": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_11299600/shapefiles/USA_11299600_distributed_basin.shp", 
+    "forcing_files": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_11299600/forcings/easymore-outputs",
+    "forcing_vars": {
+        "temperature": "CaSR_v3.1_P_TT_09975",
+        "precipitation": "CaSR_v3.1_A_PR0_SFC"
+    },
+    "forcing_units": {
+        "temperature": "celsius",
+        "precipitation": "meter / hour"
+    },
+    "forcing_time_zone": "UTC"
+}

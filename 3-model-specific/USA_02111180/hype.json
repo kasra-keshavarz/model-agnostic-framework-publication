@@ -37,8 +37,8 @@
         "landcover": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_02111180/attributes/landcover/MCD12Q1.061/USA_02111180_stats_MCD12Q1.061_2020.csv",
         "elevation": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_02111180/attributes/elevation/USA_02111180_stats_elv.csv"
     },
-    "subbasins_shapefile": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_02111180/shapefiles/USA_02111180_distributed_river.shp",
-    "rivers_shapefile": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_02111180/shapefiles/USA_02111180_distributed_basin.shp",
+    "subbasins_shapefile": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_02111180/shapefiles/USA_02111180_distributed_basin.shp",
+    "rivers_shapefile": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/USA_02111180/shapefiles/USA_02111180_distributed_river.shp",
     "frac_threshold": 0.01,
     "spinup_days": 274
 }

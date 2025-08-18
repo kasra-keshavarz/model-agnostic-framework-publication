@@ -8,6 +8,7 @@
     "summaflow": "summaflow",
     "fuseflow": "fuseflow",
     "marrmotflow": "marrmotflow",
+    "hypeflow": "hypeflow",
     "tar": "tar",
     "rm": "rm"
   },
@@ -170,6 +171,10 @@
       "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BV004/marrmot.json",
       "output-path": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01BV004/models/marrmot/"
     }],
+    "hypeflow": [{
+      "json": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BV004/hype.json",
+      "output-path": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01BV004/models/hype/"
+    }],
     "tar": [{
       "file": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01BV004.tar",
       "directory": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/5-outputs/CAN_01BV004/",
@@ -198,8 +203,9 @@
     "summaflow": 6,
     "fuseflow": 7,
     "marrmotflow": 8,
-    "tar": 9,
-    "rm": 10
+    "hypeflow": 9,
+    "tar": 10,
+    "rm": 11
   },
   "submission": {
     "geofabric": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/1-geofabric/geofabric.slurm",
@@ -210,6 +216,7 @@
     "summaflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BV004/summa.slurm",
     "fuseflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BV004/fuse.slurm",
     "marrmotflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BV004/marrmot.slurm",
+    "hypeflow": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/3-model-specific/CAN_01BV004/hype.slurm",
     "tar": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/etc/tar.slurm",
     "rm": "/home/kasra.keshavarz1/github-repos/model-agnostic-framework-publication/etc/rm.slurm"
   }

@@ -73,8 +73,9 @@ def main():
     # NextDownID is always 0
     riv.loc[0, 'NextDownID'] = 0
     
-    # make sure the COMID of `cat` is also an integer
+    # make sure the COMID of `cat` and `riv` is also an integer
     cat['COMID'] = cat['COMID'].astype(int).astype('Int64')
+    riv['COMID'] = riv['COMID'].astype(int).astype('Int64')
 
     # saving both files
     # first creating directory based on the subbasin fabric code

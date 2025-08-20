@@ -21,6 +21,7 @@
 # import necessary libraries
 # built-in libraries
 import os
+import warnings
 import argparse
 
 # third-party libraries
@@ -60,19 +61,27 @@ def main():
         if riv.loc[0, col] is None:
             riv.loc[0, col] = 0 
             riv[col] = riv[col].astype(int).astype('Int64')
-    
+        # if provided, just assign them as float if possible, otherwise
+        # leave as-is
+        else:
+            try:
+                riv[col] = riv[col].astype(float)
+            except:
+                warnings.warn(f"Column {col} is neither integer nor a"
+                        " float value.")
+ 
     # assign `order` to 1
     if riv.loc[0, 'order'] is None:
         riv.loc[0, 'order'] = 1 
         riv['order'] = riv['order'].astype(int).astype('Int64')
-    
+ 
     # assign the geometry to a point
     if riv.loc[0, 'geometry'] is None:
         riv.loc[0, 'geometry'] = gpd.points_from_xy([0], [0])[0]
-    
+ 
     # NextDownID is always 0
-    riv.loc[0, 'NextDownID'] = 0
-    
+    riv.loc[0, 'NextDownID'] = int(0)
+ 
     # make sure the COMID of `cat` and `riv` is also an integer
     cat['COMID'] = cat['COMID'].astype(int).astype('Int64')
     riv['COMID'] = riv['COMID'].astype(int).astype('Int64')
